@@ -1,0 +1,22 @@
+To Do List For Spark:
+
+1. Decide if current employment should be required from students aswell as mentors (Done)
+2. Put current employment into the database (Done)
+3. Fix profile pictures
+4. Add more options to the edit profile section (Done)
+5. Add a view profile section (Done)
+6. Add page for viewing all profiles that you match with
+7. Make matching algorithm (Done)
+8. Add peer to peer messaging system
+9. Add about page (Done)
+10. Find a way to host website (Done)
+11. Final Touch ups
+12. Make editing profile easier (done)
+13. Make 10+ fake accounts with different attributes for the algorithm
+
+
+Fix profile pictures
+Final Touch ups
+Make 10+ fake accounts with different attributes for the algorithm
+Make Poster board
+

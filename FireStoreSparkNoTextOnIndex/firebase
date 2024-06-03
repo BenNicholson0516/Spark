@@ -1,0 +1,104 @@
+// Your web app's Firebase configuration
+
+ /*var firebaseConfig = {
+    apiKey: "AIzaSyDL5Gt79b2TijgHZP8bgXssoWynS8AGcds",
+    authDomain: "spark-70fd8.firebaseapp.com",
+    projectId: "spark-70fd8",
+    storageBucket: "spark-70fd8.appspot.com",
+    messagingSenderId: "1032291077321",
+    appId: "1:1032291077321:web:a18d6358d58e0e35b91118"
+  }; */
+ // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDL5Gt79b2TijgHZP8bgXssoWynS8AGcds",
+    authDomain: "spark-70fd8.firebaseapp.com",
+    projectId: "spark-70fd8",
+    storageBucket: "spark-70fd8.appspot.com",
+    messagingSenderId: "1032291077321",
+    appId: "1:1032291077321:web:a18d6358d58e0e35b91118"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth()
+const database = firebase.database()
+
+function register () {
+username = document.getElementById('username').value
+email = document.getElementById('email').value
+username = document.getElementById('password').value
+
+if (validate_email(email) == false || validate_password(password) == false) {
+    alert('Email or Password is incorrect')
+    return 
+}
+// RIGHT HERE IS WHERE TO ADD NEW STUFF------------------------------------------
+
+
+auth.createUserWithEmailAndPassword(email,password)
+.then(function() {
+
+    var user = auth.currentUser
+
+    var database_ref = database.ref()
+
+    var user_data = {
+        username : username,
+        email: email,
+        //password : password,
+        last_login : Date.now()
+        // NEW STUFF HERE --------------------------------------------------
+    }
+
+    database_ref.child('users/' + user.uid).set(user_data)
+
+    alert('User Created')
+})
+.catch(function(error) {
+    var error_code = error.code
+    var error_message = error.message
+
+    alert(error_message)
+})
+
+
+
+
+
+}
+
+
+function validate_email(email) {
+    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    if (expression.test(email)  == true) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function validate_password(password) {
+    if (password < 6) {
+        return false 
+    } else {
+        return true
+    }
+}
+
+function validate_field(field) {
+    if (field == null) {
+        return false
+    } 
+        if (field.length <= 0) {
+            return false
+        }  else {
+        return true
+    }
+}

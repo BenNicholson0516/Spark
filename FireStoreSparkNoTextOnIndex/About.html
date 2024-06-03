@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="sold.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Spark</h2>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Find Mentor.html" id = "DisplayTheUsersName">Find Mentor</a>
+            <a href="Profile.html">Profile</a>
+            <a href="Edit Profile.html">Edit Profile</a>
+            
+        </nav>
+    </header>
+
+
+    <div class="content-wrapper">
+        <div class="intro-wrapper">
+            <div class="intro-text">
+                <h3>Welcome to Spark</h3>
+                <p>At Spark, we believe in the transformative power of mentorship and the incredible potential that lies within every student. Our mission is to bridge the gap between students and mentors, creating a supportive community that empowers learners to achieve their academic, professional, and personal goals.</p>
+            </div>
+        </div>
+
+        <div class="profile-wrapper">
+            <div class="form-box">
+                <div class="input-box">
+                    <input type="text" id="ReportedProblem" name="ReportedProblem" rows="5" required>
+                    <label for="ReportedProblem">Report Problem:</label>
+                    <span class="icon"><i class="fas fa-briefcase"></i></span>
+                </div>
+                <button id="Submit" class="btn1">Submit</button>
+            </div>
+        </div>
+        <audio id="backgroundMusic" src="song.mp3"></audio>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitButton = document.getElementById('Submit');
+            submitButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                const reportedProblem = document.getElementById('ReportedProblem').value;
+                if (
+    reportedProblem === "man" || 
+    reportedProblem === "The man" || 
+    reportedProblem === "The Man" || 
+    reportedProblem === "Man" || 
+    reportedProblem === "the man"
+) {
+                    document.body.style.backgroundImage = "url('TMWSTW.jpg')";
+                    alert("Who sold the world");
+                    const music = document.getElementById('backgroundMusic');
+                    music.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<header>
+    <h2 class="logo">Spark</h2>
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Find Mentor.html" id = "DisplayTheUsersName">Find Mentor</a>
+        <a href="Profile.html">Profile</a>
+        <a href="Edit Profile.html">Edit Profile</a>
+        
+    </nav>
+</header>
+<body>
+<div class="profile-wrapper">
+    <div class="form-box">
+        <h2>Edit Profile</h2>
+
+        <div class="ProfilePic">
+            <div class = "card">
+           <img src = "ProfileImages/SparkDFP.png" id="profile-pic">
+           <label for="input-file">Update Image</label>
+            <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-file">
+        </div>
+        </div>
+
+        <div class="input-box NameOption">
+            <input type="text" id="UsersName" name="Name" required>
+            <label for="UsersName">Name:</label>
+            <span class="icon"><i class="fas fa-user"></i></span>
+        </div>
+        
+        <div class="input-box AgeOption">
+            <input type="text" id="UserAge" name="Age" required>
+            <label for="UserAge">Age:</label>
+            <span class="icon"><i class="fas fa-calendar"></i></span>
+        </div>
+        
+        <!--DESIRED CAREER -->
+        <div class="input-box">
+            <input type="text" id="UserCareer" name="Career" required>
+            <label for="UserCareer">Desired Career or Career Field:</label>
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+        </div>
+        
+        <!-- PAST EDUCATION -->
+        <div class="input-box">
+            <input type="text" id="UserPastEducation" name="PastEducation" rows="5" required>
+            <label for="PastEducation">Past Education:</label>
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+        </div>
+
+        <div class="input-box">
+            <input type="text" id="UserContactInfo" name="UserContactInfo" rows="5" required>
+            <label for="UserContactInfo">Contact Information:</label>
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+        </div>
+
+        <div class="SorM">
+            <label for="SorM">Are you a Student or a Mentor?</label>
+            <div>
+                <button id="Student" class="btn1" type="button">Student</button>
+                <button id="Mentor" class="btn1" type="button">Mentor</button>
+            </div>
+        </div>
+        <div class="input-box" id="mentorEmploymentBox">
+            <input type="text" id="mentorEmployment" name="Employment">
+            <label for="mentorEmployment">Current Employment:</label>
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+        </div>
+       
+
+        <button id="SaveProfChanges" class="btn1">Save Changes</button>
+    </div>
+</div>
+
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Firebase and your scripts -->
+
+</body>
+
+<script type="module" src="signin.js" defer> </script>
+
+
+</html>
